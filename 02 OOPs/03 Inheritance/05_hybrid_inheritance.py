@@ -1,0 +1,1 @@
+# Combination of two or more types of inheritance.

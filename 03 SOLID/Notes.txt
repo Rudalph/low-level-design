@@ -1,0 +1,16 @@
+1. Number of classes increases = Coupling between classes increases
+    Which leads to
+    |- Maintenability issues
+    |- Readability problems
+    |- Increased bugs and debugging efforts
+    |- Monetary losses
+
+2. Robert C. Martin - 
+Published the SOLID design principles in 2000, which are widely regarded as best practices for maintainable and scalable object-oriented designs.
+
+3. SOLID Acronym
+    |- Single Responsibility Principle (SRP)
+    |- Open-Closed Principle (OCP)
+    |- Liskov Substitution Principle (LSP)
+    |- Interface Segregation Principle (ISP)
+    |- Dependency Inversion Principle (DIP)

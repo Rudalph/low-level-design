@@ -1,0 +1,27 @@
+1. A class should have only one reason to change. 
+
+2. Or equivalently, a class should do only one thing (handle one responsibility).
+
+    |- One class has too many responsibilities
+    |- We update or changed one responsibility
+    |- Other responsibilities are affected and needs updates and maintainance
+
+3. Class ShoppingCart
+    |- Add product Method
+    |- Calculate Total
+    |- Print Invoice Method (Voilates SRP)
+    |- Add to database Method (Voilates SRP)
+
+    A. Now if we want to change Add to database method or Print Invoice Method the class gets updated
+
+4. How to implement SRP?
+    |- Break the ShoppingCart class into multiple classes
+        |-> ShoppingCart
+        |-> InvoicePrinter
+        |-> DatabaseStorage
+    |- All classes hold references to the ShoppingCart as needed.
+    |- Changes to one responsibility do not affect others.
+
+
+Note: SRP allows you to isolate different concerns, 
+making the system easier to maintain and extend without unintended side effects.
