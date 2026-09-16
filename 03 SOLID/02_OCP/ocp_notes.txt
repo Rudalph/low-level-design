@@ -1,0 +1,34 @@
+1. OCP: Software entities should be open for extension, but closed for modification.
+
+2. What does open for modification mean
+    |- Add new behaviour
+    |- Without havig to rewrite existing code
+
+3. What does closed for modification means
+    |- Avoid repeatedly modifying that code whenever a new requirement arrives.
+
+4. Hint: Add new code instead of repeatedly changing old code.
+
+5. Example:
+Notification System Class [Takes notification type as input]
+    |- Email
+    |- Phone
+    |- SMS
+Now lets say eventually notification types increases (Whatsapp, Telegram, Slack, Discord etc)
+We have to every time keep updaing Notification class
+
+Note: The biggest problem isn't necessarily that the if statements are ugly.
+The class has to know about every possible notification type.
+
+6. Solution: Abstraction and Ploymorphism
+- Check Voilation file
+- Check Implemented file
+
+7. Deeper meaning
+OCP does not mean: Never modify existing code.
+Instead OCP means: Design your system so that common kinds of new requirements can be added with minimal modification to stable existing code.
+
+8. When should you think about OCP?
+- OCP becomes particularly useful when you notice variation.
+- Ask: What part of this code is likely to change?
+- and are these good candidates for abstractions/polymorphism.
