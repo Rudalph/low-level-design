@@ -1,0 +1,7 @@
+1. Liskov Substition Principal
+    |- Class A = Parent
+    |- Class B = Child
+    |- We should be able to use B whenever we expect A
+    |- Child class should be proper replacement for parent class
+
+2. The child can change the implementation but should maintain the meaning of the operation.
