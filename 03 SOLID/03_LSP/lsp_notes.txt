@@ -5,3 +5,5 @@
     |- Child class should be proper replacement for parent class
 
 2. The child can change the implementation but should maintain the meaning of the operation.
+
+ADVANCE LISKOV SUBSTITUTION PRINCIPAL = READ NOTES

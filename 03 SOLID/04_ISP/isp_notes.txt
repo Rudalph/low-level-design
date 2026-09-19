@@ -1,0 +1,41 @@
+1. ISP: Clients should not be forced to depend on methods they do not use.
+
+2. Simple Words
+        |-Don't create one huge interface 
+        |-That forces every class to implement things it doesn't need. 
+        |-Instead, split it into smaller, focused interfaces.
+
+3. Interface?
+    |- set of operations that a class promises to provide.
+    |- An interface is essentially a contract.
+
+4. Example
+- Lets assume we have a prent class Machine
+- It has 3 methods
+        |- print_document
+        |- scan_document
+        |- fax document
+- Now we have a child class SimplePrinter
+- Since its child class it has to have all 3 methods
+- But SimplePrinter is very basic printer and just supports basic printing and not scan and fax
+- But since it has been inherited from Machine class its forced to have all 3 methods
+- THIS IS ISP problem
+
+5. Solution
+- We have to break down the interface into smaller interfaces
+
+6. ISP Doesn't Mean "Make Every Interface Tiny"
+        |- ISP dosent mean Every interface should have exactly one method.
+        |- Interfaces should be focused around what their clients actually need.
+
+7. Why ISP Is Useful
+        |- Less unnecessary dependency
+        |- Easier testing
+        |- Easier maintenance
+        |- Lower coupling
+        |- Better readability
+
+8. ISP vs SRP
+        |- SRP asks: Does this class has too many responsibilites
+        |- ISP asks: Are client beign asked to depend on methods that they dont need
+
