@@ -1,0 +1,78 @@
+1. Dependency Inversion Principle
+    |- High-level code should not depend directly on low-level implementation details. Both should depend on abstractions.
+    |- Abstractions should not depend on details. Details should depend on abstractions.
+
+
+2. What is depndency?
+class Email:
+    def send_email(self):
+        print("Sending Email")
+class NotificationService:
+    def notify(self):
+        email = Email()
+        email.send_email()
+Here NotificationService service depends on Email
+
+    - What is the problem in this type of code Dependency
+        |- Tight Coupling
+        |- High Level Module has too much exposure to Low Level Modules
+        |- If low level implementation changes then high level implementation would be affected
+            |- But low level changes should not affect high level modules
+
+
+3. Modules 
+    |- High Level Module = Module that handles business logic
+    |- Low Level Module = Module that handles core implementation
+
+4. Solution
+    |- Introduce an Abstraction
+    |-  Low Level Module —> Abstraction <— High Level Module
+    |- This is called dependency inversion
+
+5. Two Rules of Dependency Inversion Principle
+    |- High-level modules should not depend on low-level modules. Both should depend on abstractions.
+    |- Abstractions should not depend on details. Details should depend on abstractions.
+
+6. Dependency Injections
+    |- Dependency Inversion = Design Principle
+    |- Dependency Injection = A technique used to provide dependencies from outside.
+    |- Dependency Injection —> implementation technique
+    |- How and where is one class made to depend on another
+
+7. Three Common Types of Dependency Injection
+    |- Constructor [Dependency is made in Constructor]
+        class OrderService:
+            def __init__(self, payment_processor):
+                self.payment_processor = payment_processor
+        service = OrderService(StripePayment())
+
+    |- Setter
+        class OrderService:
+            def set_payment_processor(self, processor):
+                self.payment_processor = processor
+        service = OrderService()
+        service.set_payment_processor(StripePayment())
+
+    |- Method [Dependency is passed directly to a method]
+        class OrderService:
+            def checkout(self, amount, payment_processor):
+                payment_processor.pay(amount)
+        service.checkout(100, StripePayment())
+
+8. Benifits
+    |- Loose Coupling
+    |- Easier 
+    |- Easier replacement (Stripe, Payment)
+    |- Easier maintenance
+    |- Easier extension
+    |- Better separation of concerns
+
+9.When to use DIP
+    |- You have external systems [Database, Payment, Email, Cloud, Third-Party API]
+    |- Implementations are subject to changes
+    |- We need easy testing
+    |- We have complex business logic and we need loose coupling
+
+10. How to check if DIP is getting voilated?
+    |- Ask: Does my high-level business logic directly create or depend on a concrete infrastructure implementation?
+    
