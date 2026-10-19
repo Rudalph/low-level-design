@@ -38,4 +38,3 @@
 8. ISP vs SRP
         |- SRP asks: Does this class has too many responsibilites
         |- ISP asks: Are client beign asked to depend on methods that they dont need
-
