@@ -1,0 +1,14 @@
+I recently learned Single Responsibility Principle from SOLID principles.
+
+I want to practice it and implement it.
+
+I want you to give me 3 question, I will understand those questions and I will apply Single Responsibility Principle on it and I will code them.
+- 1st question should be easy
+- 2nd question should be easy-medium
+- 3rd question should be medium
+
+Draft the 3 question in simple and easy words such that they should be clearly understandable. Do not generate too much content generate only necessary content. Question should be detailed yet short crisp to the point and of good quality.
+
+Later I will be pasting all the 3 solution code and understanding to you. You have to give me feedback.
+
+Go ahead
