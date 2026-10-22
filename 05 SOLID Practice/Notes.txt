@@ -12,3 +12,17 @@ Draft the 3 question in simple and easy words such that they should be clearly u
 Later I will be pasting all the 3 solution code and understanding to you. You have to give me feedback.
 
 Go ahead
+
+Note: I have already learned and practice Single Responsibility Principle 
+so in this question I will be focusing on Open Closed Principle 
+along with not violating and keeping in mind Single Responsibility Principle. 
+While evaluating you focus on OCP but also have a little focus on SRP
+
+
+Okay 
+Now I solved the question 2 from my end
+Below is the code
+....................
+I want your feedback and suggestions on my implementation.
+Do not generate too much unnecessary content. 
+Be short crisp to the point clear and short yet detailed simple and very easy
