@@ -1,0 +1,27 @@
+Strategy Design Pattern
+
+
+SDP - Will try to prove Inheritance is bad
+
+
+- Think of a deep hiarchery of Inheritance
+- Sonution to inheritance is not more inheritance
+
+
+What are the problems with more and more deep Inheritance?
+    - Code reusability is challenged
+    - Breaks open close principal
+    - To add new features chnages are needed or more Inheritance is needed
+
+
+What is the Solution?
+    - Strategy Design Pattern
+
+'''
+- Defines a family of algorithms
+- Put them into seperate classes
+- So that they can be changed at run time
+'''
+
+
+SDP — FAVOUR COMPOSITION OVER INHERITANCE

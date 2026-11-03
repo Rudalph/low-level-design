@@ -1,0 +1,33 @@
+What are Design Patterns?
+    - While developing applications
+    - Developers have previously encountered some problems
+    - Those problems were solved and problem and solution was documented
+    - Now whenever we see those problems again while developing new applications
+    - We use same solution
+    - This is called design Patterns
+
+
+While developing an application
+Note that: CHANGE IS ONLY CONSTANT
+applications keep chaning and new features keeps adding
+
+
+While developing a new application we use
+- OOPS
+- Design Patters 
+- etc
+To make minimal changes in current code and keep the code and application flexible
+
+
+We have in total 23 design Patters
+
+
+There are 2 parts in any code
+    - Static
+    - Dynamic
+All design patters aim for one thing
+    - EXTRACT THE DYNAMIC PART FROM STATIC PART AND KEEP IT IN SEPERATE CLASS
+
+
+We have to make sure that our code always DRY principal
+    - Don't Repeat Yourself
