@@ -55,7 +55,7 @@ class NormalFly(RobotFly):
 
 class JetFly(RobotFly):
     def flying(self):
-        print(JetFly)
+        print('JetFly')
         
 # Making different type of Robots
 class CompanionRobot(Robot):
@@ -85,3 +85,56 @@ companion_robot_1.fly.flying()
 5. Multiple interchangeable behaviors:	Walk, Talk, Fly
 6. Runtime Strategy Switching:	Possible, Not Demonstrated
 '''
+
+
+'''
+Better Approach
+
+class Robot:
+    def __init__(self, w, t, f):
+        self.walk = w
+        self.talk = t
+        self.fly = f
+
+    def perform_walk(self):
+        self.walk.walking()
+
+    def perform_talk(self):
+        self.talk.talking()
+
+    def perform_fly(self):
+        self.fly.flying()
+
+    def projection(self):
+        pass
+        
+
+companion_robot_1 = CompanionRobot(
+    NormalWalk(),
+    NormalTalk(),
+    NormalFly()
+)
+
+companion_robot_1.perform_walk()
+companion_robot_1.perform_talk()
+companion_robot_1.perform_fly()
+
+
+# Runtime strategy switching
+
+companion_robot_1 = CompanionRobot(
+    NormalWalk(),
+    NormalTalk(),
+    NormalFly()
+)
+
+companion_robot_1.perform_walk()
+# Normal Walk
+
+# Change walking strategy at runtime
+companion_robot_1.walk = HopWalk()
+
+companion_robot_1.perform_walk()
+# Hop Walk
+'''
+
