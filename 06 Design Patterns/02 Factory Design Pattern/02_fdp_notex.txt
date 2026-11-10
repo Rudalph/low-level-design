@@ -1,0 +1,49 @@
+Factor Design Pattern
+
+
+What is a Factory?
+- Where products (objects) are created.
+
+
+In SDP
+- We used to pass objects into clients dynamically. 
+- Assuming objects were already created somewhere
+
+
+But in FDP
+- We are creating a separate class which will be responsible to create 
+objects.
+
+
+Note:
+FDP also says keep business logic seperate from object creational logic
+
+
+Flow:
+- client will ask factory to give object and Factory will in return give object to client
+- client doesn't know how are objects created.
+- object creational logic and clients are decoupled 
+
+
+Factory Design Pattern has 3 types
+1. Simple Factory 
+2. Factory Method 
+3. Abstract Factory Method
+
+
+Simple Factory: 
+A factory class that determines which concrete class to instantiate
+
+Factory Method:
+Defines an interface for creating objects but allows sub classes to decide which class ti instantiate
+
+Abstract Factory Method:
+- A factory that can produce more than one products
+- Provide an interface for creating families of related objects without specifying their concrete classes
+
+
+Trade-Offs Example
+- Notification System
+- We can use Strategy Design Pattern and Factory Design Pattern both
+- One problem can be solved using multiple design patterns
+- Which pattern to select depends on use-case and trade offs
