@@ -1,0 +1,25 @@
+Singleton Design Pattern
+- Very Simple
+- Widely Used
+
+Defination:
+Singleton is the type of class who's only one object can be created. If 2nd object is created
+the it will redirect us to again 1st created object
+
+
+Memory:
+1. We have 2 types of computer memories
+    - Heap (Used to store user defined datatypes)
+    - Stack (Used to store buitl in datatypes)
+
+Note: When we create an object as
+obj = ClassName() 
+() are used to call functions right so in this case constructors are called
+If there are no constructors in the class then default constructors are called
+
+so 'obj' as variable stays in stak-memory and points in heap-memory 
+where obj actually has its own space
+
+
+Singelton Design Pattern is Creational Design Pattern 
+— as it deals with creation of the objects
