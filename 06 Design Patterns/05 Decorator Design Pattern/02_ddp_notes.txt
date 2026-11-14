@@ -1,0 +1,23 @@
+DECORATOR DESIGN PATTERN
+
+We have an object and we want to change/add functionality at runtime and not compile time
+- We use Inheritance in such cases
+
+For Example (Inheritance usage for adding/changing functionality)
+- Parent Class: run() # prints 'running'
+- Child Class: run() # prints 'running with skates'
+- Now dynamica;;y we can decide which object to pass to get the desired behaviour
+
+But we know:
+- Inheritence is bad
+- Solution to inheritance is not more inheritance
+- Inheritance may lead to class explosion (Too many child classes in an application and with every change conmes a new class)
+
+
+In Decorator Design Pattern
+Inside: we have object
+Outside: we have Decorator
+
+In decorator design pattern we have both
+1. Inheritance - so decorator behaves like inside object
+2. Composition - to dynamically change behaviour
