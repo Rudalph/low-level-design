@@ -1,0 +1,26 @@
+OBSERVER DESIGN PATTERN
+
+- Let's say there are 2 Objects A and B
+- And one object changes 'A'
+- Now object 'B' wants to know when did object 'A' changed
+- Or what is the updated value of object 'A'
+- Or let's say object 'A' wants to convey all other objects that its value is updated
+
+Question: How can this be done?
+Answer: Observer Design Pattern
+
+- If we don't want to use ODP then we can use polling technique: We will understand in later part
+
+
+Object(s) that want to know the state of another objects are called 'OBSERVER'
+And object whoes state chnages are called SUBJECT/OBSERVABLE
+
+- In polling technique
+- Observer asks Obvervable 'If its value is changes' at some frequency
+- But this is hectic process
+- Thus we shift from polling to pushing
+- And this pushing is ODP
+
+Defination:
+Define a one to many relationship between objects so that when one object changes state
+all its dependents are notified and updated automatically
