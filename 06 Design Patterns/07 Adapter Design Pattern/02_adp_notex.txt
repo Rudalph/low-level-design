@@ -1,0 +1,10 @@
+ADAPTER DESIGN PATTERN
+
+We have 2 classes
+They do not interact with each other or have compatibility issues
+We can introduce and Adapter class that can have is-a and has-a relation with both 
+and act as a bridge between them
+
+Use Cases
+    |- 3rd Party Integration
+    |- Legacy Code (We introduce adapter between Old app code and new app code)
