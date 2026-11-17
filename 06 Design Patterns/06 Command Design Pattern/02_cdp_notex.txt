@@ -1,0 +1,26 @@
+COMMAND DESIGN PATTERN
+
+We have one object: Source
+We have another object: Receiver
+
+source wants to send and command and ask receiver to get some work done.
+So source can call some methodes of receiver like
+    |- run()
+    |- walk()
+    |- talk()
+
+Now instead of directly sending the command from source to receiver.
+We make command also an object: Command Object
+
+Why?
+Answer: So that source and receiver becomes loosely coupled
+
+Source will tell Command: 'Do this for me'
+Command know: Where to delegate the request - to which reveiver
+
+Real Life Use Cases:
+Note: Where ever we can see undo action there Command Design Pattern is applicable
+- Text Editor
+- Photoshop
+- Keyboard shortcuts
+
