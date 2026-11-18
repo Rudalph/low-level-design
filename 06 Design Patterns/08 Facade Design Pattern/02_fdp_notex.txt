@@ -1,0 +1,43 @@
+FACADE DESIGN PATTERN
+
+1. We have a complex class subsystem.
+    |- Class A
+    |- Class B
+    |- Class C
+    |- Class D
+    |- Class E
+and all of them interact with each other
+- This subsystem does some work
+
+2. But we don't want our client to directly interact with subsystem.
+- This we introduce a
+    |- Facade Class
+- It acts as a bridge between client and complex subsystem
+
+3. It act as a
+    |- Gateway
+    |- Decouples client and subsystem
+
+Note: Principle of least knowledge (POLK)
+A. Every class should have specific minimum information
+B. Every class should only interact with its immediate class
+
+let's say we have class A -> Class B -> Class C
+class A can call class B but 
+should class A not ask class B to get the object of class C
+
+Defination of POLK:
+Take any object, now from any menhod in that object,
+Principle tells you to invoke only methodsthat belongs to:
+    |- That object itself
+    |- The object passed in as parameter to the method
+    |- Any object that methods create
+    |- Any object with has-a relationshipsss
+
+4. Difference between Facade and Adapter - Check out the intent
+    |- Facade: Hide the complexity
+    |- Adapter: To make the interaction between completely different interfaces
+
+5. Defination:
+Facade pattern provides a simplified, unified interface to a set of complex subsystem
+It hides the complexity of the system and exposes only what is necessary
