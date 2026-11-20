@@ -1,0 +1,21 @@
+TEMPLATE DESIGN PATTERN
+
+1. Understand Pipeline
+Let's say we are having a Machine Learning Pipeline
+    |- 1. Load Data
+    |- 2. Preprocess Data
+    |- 3. Train Model (irrespective of any algorithm)
+    |- 4. Evaluate
+    |- 5. Save Model
+
+Let's say we have few developers
+- They follow this TEMPLATE
+- A few new developers joins the team 
+- Now the new developer might miss some steps
+- We want them also to follow this steps
+- So we create a TEMPLATE so that new developers don't mess
+
+
+Standard Defination:
+Template Design Pattern designs the skeleton of an algorithm for an operation deferring some setps to subclasses. 
+Template methods let subclasses redefine certian steps of an algorithm without changing alsorithm structure.

@@ -1,0 +1,21 @@
+COMPOSITE DESIGN PATTERN
+
+1. This design pattern is specific to a problem
+- Any problem that can be described in form of tree there CDP is applicable
+
+For example: Designing a File System
+
+FileSystem
+    |- Folders
+        |- Folders (non-leaf or composite nodes)
+        |- Files (leaf-nodes)
+    |- Files (leaf-nodes)
+
+2. Whenever we identify the problem has a tree structure
+    |- CDP may be applicable
+    |- Treat composite node and leaf node as same through one interface
+
+
+Standard Defination:
+Composite pattern composes object into tree like structure representing a part-whole
+hiearchery. It let client treats indivisual object and composition of object uniformly
