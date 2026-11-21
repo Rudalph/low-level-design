@@ -1,0 +1,19 @@
+CHAIN OF RESPONSIBILITY DESIGN PATTERN
+
+1. We have a client
+- And we have a chain on objects
+    |- 1st object has refenence of 2nd object
+    |- 2nd Object has reference of 3rd object and so on
+
+2. When client sends a request
+    |- Object 1 checks can I full fill the request (if yes - great if no then send it to obj 2)
+    |- Now Object 2 check can I full fill the request (and so on)
+
+3. ATM Example
+    |- When user wants to withdraw 3000 amount cash
+    |- There might be handlers inside ATM
+        |- 1000 Rupee Notes Handler (H1)
+        |- 500 Rupee Notes Handler (H2)
+        |- And so on
+    |- Now if H1 has 3000 then good to go else it will req H2 for remaining anount
+    |- And so on

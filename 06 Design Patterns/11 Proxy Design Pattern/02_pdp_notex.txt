@@ -1,0 +1,39 @@
+PROXY DESIGN PATTERN
+
+1. We have a user and a resource
+    |- User sends some request to resource
+    |- Resource reverts backs with some response
+
+2. Now we introduce a new class between User and Resource
+    |- Proxy 
+    |- Proxy can do following things
+        |- User authentication
+        |- Request headers/data validation
+    |- User and Proxy will live in same system but resource may live over internet
+
+3. Proxy acts as Resource for User
+    |- For user, proxy and resource are indifferential
+
+4. Types of of Proxy
+    |- Virtual
+    |- Protection
+    |- Remote
+
+Note: Proxy is representative of resource
+- Proxy represent resource to client
+- Client don't know if he is interacting with Proxy or Resource
+
+5. Intents (Internsions of each proxy types)
+    |- Virtual —> Lazy loading: preventing unnecessary creation of heavy objects
+    |- Protection —> Protecting the real object by authentication and authorization
+    |- Remote —> Connect the client class with some remote class 
+
+
+6. Standard Defination
+The proxy pattern provides a surrogate or a placeholder for another object to control
+access to it
+
+7. Use Cases
+    |- authentication
+    |- remote calls
+    |- lazy loading
