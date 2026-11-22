@@ -17,3 +17,7 @@ CHAIN OF RESPONSIBILITY DESIGN PATTERN
         |- And so on
     |- Now if H1 has 3000 then good to go else it will req H2 for remaining anount
     |- And so on
+
+4. Standard Defination:
+Allows an object to pass an request along the chain of potential handlers. Each handler in the chain
+decides either to process the request or pass it to the next handler

@@ -1,0 +1,54 @@
+BRIDGE DESIGN PATTERN
+
+1. We are making a car
+    A. For that we are considering 2 things
+        |- Car type
+        |- Car Engine
+    
+    B. There are multiple car types and Engine
+        For Example car type
+        |- Sedan
+        |- Hatchback
+        |- SUV
+        |- ... (M)
+
+        And similaraly we have car engine types
+        |- Petrol Engine
+        |- Disel Engine
+        |- Electric Engine
+        |- CNG Engine
+        |- ... (N)
+
+    C. Now lets say we have a class car
+        |- This class is abstract
+        |- And we have to use car type and car engines to make concrete classes of this class 
+        |- Example: Sedan-With-Petrol, Haybatch-With-Electric and so on
+        |- We get too many permutations and combinations
+
+    D. This pernumations and combinations finally leads to class explosion (as number of classes needed are M * N)
+
+2. Bridge Design Pattern is the Solution to this problem
+    |- What does Bridge Design Pattern Says:
+        |- If we have a concept (Problem or anything) then break it into 2 parts 
+            |- Part 1: High Level Part (Abstraction 'How it looks')
+            |- Part 2: Low Level Part (Implementation 'Actual Working')
+
+        |- In our car example:
+            |- High Level Part: Car Type (looks)
+            |- Low Level Part: Car Engine (Actual Working)
+
+        |- This stops the class explossion as the number of classes are M + N (Check Diagram)
+
+
+3. Standard defination
+    |- Bridge decouples abstractions (High Level Part) from its Implementations (Low level part)
+       so that both can vary independently
+
+4. Bridge Pattern and Strategy Pattern look very similar but their intentions are different.
+    |- Strategy Design Pattern
+        |- allow an object to switch between different algorithms 
+        |- Example: Payment system. (You can change the payment strategy without changing the ShoppingCart class.)
+    
+    |- Bridge Design Pattern
+        |- eparate two independent dimensions of a system so that both can evolve independently.
+        |- independently add new car types and engine types.
