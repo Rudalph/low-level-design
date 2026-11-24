@@ -1,0 +1,152 @@
+BRIDGE DESIGN PATTERN
+
+1. We have 2 component
+    |- Client
+    |- Target Class
+
+    A. Client expects object of Target Class
+        |- Target class has constructor
+        |- This constructor has to do too many things
+
+    B. Constructor Overloading (Same as function overloading)
+        |- In function overloading fun has same name but different parameters
+        |- Similarly a class might have multiple constructors with different parameters doing different tasks
+        |- Constructor overloading is a problem
+        |- Constructor overloading also called constructor telescoping
+
+    C. Once an object is created
+        |- Getters and Setters help us to get the values and set new values
+        |- So the object is mutable
+        |- But in some cases we want the object to be IMMUTABLE - This is also a problem
+
+    D. Inconsistent State problem
+        |- We have an class and it has 5 variables and 1 method
+        |- I created an object of the class
+        |- Then using setters I set 4 variables and forgot to set 1 variable
+        |- For the object to call the method it is necessary all 5 variables are set we 1 is left in our case 
+        |- so if the object calls the method then it will give runtime error (Not compile time error)
+        |- This type of object is in Inconsistent State
+
+    E. Validations
+        |- Lets say we have created an object and set all its variables
+        |- We have an method that the object can call
+        |- Now before executing the core part of the method we want to ensure all variables are set
+        |- So in the method we can have validation-code to check if all the variables are set
+        |- Now every time we are using this object anywhere we have to do validation
+        |- So the validations are getting scattered, this is called — Scattered Validations
+
+
+2. Standard Defination
+    |- Builder seperates the construction of the complex object from its representation
+
+
+3. The Builder Design Pattern
+    |- allows us to construct complex objects step by step instead of passing everything through a single constructor.
+    |- Instead of creating an object by providing all its properties at once, we create the object gradually by setting its properties one at a time.
+
+
+4. Standard Problem: HTTPRequest
+    |- Imagine you're developing an application that communicates with an external REST API. (POST https://api.example.com/users)
+    |- And we send the following information:
+        |- Headers
+        |- Request Body
+        |- Timeout
+        |- URL
+        |- Method
+        |- Authentication
+        |- Body
+    
+    |- Now imagine you have another API request. (GET https://api.example.com/users)
+        |- This request 
+            |- Doesn't need a request body.
+            |- Might need authentication.
+            |- Might need different headers.
+            |- Might have a different timeout.
+
+    |- And another request (DELETE https://api.example.com/users/101)
+        |- Different configurations are required for different requests.
+
+
+5. The traditional approach (without Builder Pattern): Check out traditional_approach.py file
+    |- Imagine we have 15 different parameters.
+    |- Some are mandatory, and some are optional.
+    |- We now have to remember:
+        |- The correct parameter order.
+        |- Which parameters are optional.
+        |- Which values should be passed as None.
+        |- Which values are mandatory.
+
+    |- This becomes difficult to maintain.
+    |- We want to construct our HTTP request step by step.
+    |- That's exactly what the Builder Pattern provides.
+
+
+6. Implementing HTTP Request using Builder Pattern
+    |- We will create two classes:
+        |- HTTPRequest → Product
+        |- HTTPRequestBuilder → Builder
+
+    |- Step 1: Create the HTTPRequest class (Product)
+        |- This class represents the final HTTP request.
+        |- Initially, we create an HTTPRequest object with default values.
+
+    |- Step 2: Create the HTTPRequestBuilder class
+        |- The builder in its constructor creates a object of HTTPRequest.
+        |- Different methods are used to set the values to the variables of our HTTP request
+        |- Every method return self that is HTTPRequestBuilder object (This helps in chaining)
+        |- At last we have build Method
+            |- It returns the final configured HTTPRequest object.
+            |- The one which we created in the constrcutor of HTTPRequestBuilder
+
+    |- Now let's create an actual HTTP Request
+    |- builder = HTTPRequestBuilder()
+        request = (
+            builder
+            .set_url("https://api.example.com/users")
+            .set_method("POST")
+            .add_header("Content-Type", "application/json")
+            .add_header("Accept", "application/json")
+            .set_body({
+                "name": "Rudalph",
+                "email": "rudalph@example.com"
+            })
+            .set_auth("my_access_token")
+            .set_timeout(30)
+            .build()
+        )
+
+        request.show_request()
+    |- We configured our HTTP request one property at a time.
+    |- We didn't need to pass six or seven parameters into a constructor.
+
+    |- Let's understand Method Chaining
+    |- builder.set_url(...)
+       .set_method(...)
+       .add_header(...)
+       .set_body(...)
+       .build()
+    |- How is Python allowing us to call multiple methods like this?
+    |- Remember this line in every method?
+
+
+    |- Can we create different HTTP requests using the same Builder?
+        |- Yes, This is one of the biggest advantages.
+
+    
+7. We have Majorly 3 types of Builder Design Pattern 
+    |- Classic Builder Design Pattern (The one we have seen above)
+    |- Director Builder Design Pattern
+    |- Step Builder Design Pattern
+
+8. Director Builder Design Pattern
+    |- Sometimes we know for a particular request what parameters are
+        |- mandatory
+        |- And what are their values
+        |- so instead of building the object from scratch
+        |- we define a director class where we already have a function that return such object
+
+9. Step Builder Design Pattern
+    |- Normal Builder: You can call methods in any order. You can even skip some steps.
+    |- forced to follow a predefined sequence of steps. You cannot move to the next step without completing the current one.
+    |- In normal builder we return the object of Product
+    |- But in step we break every method in class and class 1 returs the object of next class in sequence
