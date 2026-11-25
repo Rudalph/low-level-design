@@ -1,0 +1,68 @@
+ITERATOR DESIGN PATTERN
+
+1. We have one object and we want to iterate over this object
+    |- object can be
+        |- LinkedIn
+        |- Binary Tree
+        |- Playlist
+
+2. An object have storing logic and traversing logic in same class
+    |- This breaks Single Responsibility Principal
+    |- Thus we seperate traversing logic using Iterator Design Pattern 
+    |- Example:
+        |- Using iterator design pattern we get a class that has traversing logic
+        |- And now the class that has iterable do not have to know what is iteration logic
+
+3. We have 2 things
+    |- Iterator: An object that returns elements one at a time
+    |- Iterable: An object you can loop over (List, Tuple)
+
+
+4. Example: Playlist
+    |- We have a song playlist (array) in our application
+    |- The traversal logic that we use in our class Playlist is simple for loop and everything works fine
+    |- Now we have different types of playlist that stores songs in different way
+        |- Array-based playlist
+        |- Linkedlist-based playlist
+        |- Tree-based playlist
+    |- Now for every type of playlist we have to implement seperate traversal logic in class playlist
+    |- This breaks Single Responsibility Principal (Storing Resposnibility + Traversal Responsibility in same class)
+
+
+5. So we use: Iterator Design Pattern
+    |- It has an abstract class Iterator
+        |- That has 2 functions: 
+            |- has_next: is next element present
+            |- next: return next element
+        |- For every type of traversal (array, linkedlist, tree) we have seperate iterator
+        |- Every Iterator has-a reference of iterable
+
+    |- It has another abstract class Iterable
+        |- That has one function: create_iterator()
+            |- When we call this function we create and return the object of concrete iterator
+
+    |- Now once the client has iterator
+        |- he can use has_next and next functions
+
+
+6. Standard Defination:
+The Iterator Design Pattern is a behavioural design pattern that provides a way to access elements of a collection 
+one by one without exposing how the collection internally stores those elements.
+
+
+7. Real-world examples
+    |- Music application (Playlist)
+    |- File Exploler (Files and Folder)
+    |- Social Media (Posts in feed)
+
+
+8. Advantages and disadvantages
+    |- Advantages
+        |- Encapsulation: Hides the internal structure of a collection.
+        |- Single Responsibility: Collection manages data; iterator manages traversal.
+        |- Open/Closed Principle: You can introduce new iterator implementations without changing the client.
+        |- Multiple traversals: You can create multiple independent iterators for the same collection.
+    |- Disadvantages 
+        |- Additional classes and code.
+        |- Can be unnecessary for simple collections that already support iteration.
+        |- Changes to a collection during iteration may cause unexpected behaviour, depending on implementation.

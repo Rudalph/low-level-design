@@ -1,0 +1,70 @@
+FLYWEIGHT DESIGN PATTERN
+
+1. It is used if we want to makke our object
+    |- Lightweight
+    |- Save our RAM
+
+2. All objects are created in RAM
+    |- If there is a use case where we need too many objects
+    |- Then it becomes difficult for RAM to manage the objects
+    |- So we use Flyweight Design Pattern
+
+3. FDP says
+    |- Create the object once
+    |- See if it can be resused
+    |- If it can be resued then use the existing one
+    |- Else create a new object
+
+
+3. Intrinsic state and Extrinsic state
+    |- Every object has 2 states (Intrinsic and Extrinsic)
+    |- Intrinsic state: Common properties shared between objects
+    |- Extrinsic state: Unique properties specific to each object
+    |- Will understand better with the example
+
+
+4. Example 
+    |- Imagine we are developing a game where we have to display 1,000 trees.
+    |- Each tree has the following properties:
+        |- Tree type (Oak, Pine, Mango)
+        |- Color
+        |- Texture
+        |- X coordinate
+        |- Y coordinate
+        Now, imagine creating 1,000 tree objects.
+    
+    |- The Problem: 
+        |- Suppose we have 500 Oak trees.
+        |- Each Oak tree has the same:
+            |- Tree type
+            |- Color
+            |- Texture
+            But we are storing these properties 500 times!
+            This unnecessarily consumes memory.
+
+5. Solution: Flyweight Design Pattern
+    |- The Flyweight pattern divides the properties into two categories:
+        |- Intrinsic state (Tree type, Colour, Texture)
+        |- Extrinsic state (X cordinate and Y cordinate)
+    
+    |- Instead of creating three Oak tree objects, we create just one shared Oak tree object and reuse it.
+
+
+6. How to implement FDP
+    |- Flyweight Class
+        |- Create a class that has all Intrinsic properties/variables
+        |- And methods
+            |- that use both intrensic properties 
+            |- And extrinsic properties passed as parameters to the methods
+    |- Context Class
+        |- Create a class that has all Extrinsic properties/variables
+        |- flyweight class object
+        |- Methods same as Flyweight Class: As Client will interact with this class
+        
+        |- So in this class
+            |- We have flyweight class objects that has all intrensic properties
+            |- Varibales that has Extrinsic properties
+            |- Methods in this class will call the methods of flyweight class with extrensic variables as parameters
+
+    |- Factory Class
+        |- This class is responsible for creating and storing object of Flyweight class in map
